@@ -1,0 +1,15 @@
+# 1. Clone the repository without checking out files
+git clone --filter=blob:none --no-checkout https://github.com/owner/repo.git
+cd repo
+
+# 2. Enable sparse-checkout in cone mode
+git sparse-checkout init --cone
+
+# 3. Set the directories you want to check out
+git sparse-checkout set path/to/folder1 path/to/folder2
+
+# 4. You can add more paths later with
+git sparse-checkout add <new_path>
+
+## You can disable spare-checkout and revert to full working repo 
+git sparse-checkout disable

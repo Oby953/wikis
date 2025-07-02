@@ -1,0 +1,43 @@
+# Proxy management
+pip install --proxy http://<usr_name>@<proxyserver_name>:<port#> <pkg_name> 
+
+
+export HTTP_PROXY=http://163.162.8.137:9994
+
+export HTTPS_PROXY=http://163.162.8.137:9994
+
+export ftp_proxy=http://163.162.8.137:9994
+
+docker pull ghcr.io/ipcei-tim-t3/my-component:v1
+
+pip install --proxy http://ipceiuser@163.162.8.137:9994 <pkg_name> 
+
+confluent.svc.cluster.local svc.cluster.local cluster.local
+
+# Pods management
+
+### Getting a shell to a container
+
+kubectl exec --stdin --tty <pod id> -- /bin/bash
+
+
+### You could execute a comand from outside the pod but its binary has to be in the pod itself obviously
+
+kubectl exec <pod-name> -- <command> #Note the space after the '--'
+
+# Argocd
+helm get notes my-argocd -n argocd
+
+helm upgrade --install my-argocd argo/argo-cd --version 7.7.5 -f ./values.yaml -n argocd
+
+# Kubeflow
+deploykf generate \
+  --source-version "0.1.5" \
+  --values ./cli-tools/0.1.5.1.yaml \
+  --output-dir ./kubeflow
+  
+deploykf order matrix: https://www.deploykf.org/guides/getting-started/#:~:text=You%20MUST%20sync%20the%20deployKF%20applications%20in%20the%20correct%20order.%20For%20each%20application%2C%20click%20the%20SYNC%20button%2C%20and%20wait%20for%20the%20application%20to%20become%20%22Healthy%22%20before%20syncing%20the%20next.
+
+# Ingress
+ingress has to manually configured for each service. You need two components for this a virtual service.yaml and ingress.yaml. You can find example here
+https://github.com/ipcei-tim-t3/observability-k8-manifest/tree/master/kiali-server 

@@ -1,0 +1,39 @@
+Git Repository Setup Instructions on Linux
+==========================================
+
+1. Open a Terminal
+------------------
+Navigate to the directory where your files are located:
+    cd /path/to/your/directory
+
+2. Initialize a Git Repository
+------------------------------
+Run:
+    git init
+
+This creates a .git folder in your directory, which tracks all version history.
+
+3. Add Your Files
+-----------------
+To add all files in the directory:
+    git add .
+
+Or add specific files:
+    git add script.sh notes.txt
+
+4. Commit the Files
+-------------------
+Create your first commit with a message:
+    git commit -m "Initial commit"
+
+5. (Optional) Connect to a Remote Repository
+--------------------------------------------
+If you want to push your code to GitHub, GitLab, or another Git hosting service:
+
+1. Create a new repository on the platform.
+2. Link it to your local repo:
+       git remote add origin https://github.com/yourusername/your-repo-name.git
+3. Push your code:
+       git push -u origin main
+
+Note: If you're using GitHub and it's your first time pushing, you might need to authenticate using a personal access token.

@@ -1,0 +1,4 @@
+# Ignore nextcloud files
+*.log
+*.db
+*.db-wal

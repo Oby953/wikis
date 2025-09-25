@@ -2,3 +2,6 @@
 *.log
 *.db
 *.db-wal
+
+# Ignore vscode settings
+.vscode/
